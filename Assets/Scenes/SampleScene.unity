@@ -611,6 +611,7 @@ MonoBehaviour:
   - {fileID: 584503271}
   - {fileID: 1427139505}
   maxHealth: 2
+  sword: {fileID: 8045233045473732665, guid: 28f22ad5103b5994982e674e4a100354, type: 3}
 --- !u!95 &1289598942
 Animator:
   serializedVersion: 3

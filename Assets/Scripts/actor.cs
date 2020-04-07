@@ -10,6 +10,8 @@ public class actor : MonoBehaviour
     public Image[] heart;
     public int maxHealth;
     int currentHealth;
+    public GameObject sword;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class actor : MonoBehaviour
     void Update()
     {
         Movement();
+        if (Input.GetKeyDown(KeyCode.Space))
+            Attack();
         if(currentHealth>maxHealth)
         {
             currentHealth = maxHealth;
@@ -41,6 +45,20 @@ public class actor : MonoBehaviour
         getHealth();
     }
 
+    void Attack()
+    {
+        GameObject newSword = Instantiate(sword, transform.position, sword.transform.rotation);
+        int swordDir = anim.GetInteger("dir");
+
+        if(swordDir==0)
+        {  newSword.transform.Rotate(0, 0, 0); }
+        else if(swordDir==1)
+        { newSword.transform.Rotate(0, 0, 180); }
+        else if (swordDir == 2)
+        { newSword.transform.Rotate(0, 0, 90); }
+        else if (swordDir == 3)
+        { newSword.transform.Rotate(0, 0, -90); }
+    }
     void Movement()
     {
         if(Input.GetKey(KeyCode.W))
