@@ -7,6 +7,7 @@ public class Sword : MonoBehaviour
     float timer = .15f;
     float specialTimer = 1;
     public bool special;
+    public GameObject swordParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,10 @@ public class Sword : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        if(timer<=0)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetInteger("attackDir", 5);
+        }
         if(!special)
         {
             if (timer <= 0)
@@ -31,6 +36,7 @@ public class Sword : MonoBehaviour
         if(specialTimer<=0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canAttack = true;
+            Instantiate(swordParticle, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
