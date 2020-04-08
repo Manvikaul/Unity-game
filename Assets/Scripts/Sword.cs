@@ -5,6 +5,8 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     float timer = .15f;
+    float specialTimer = 1;
+    public bool special;
 
     // Start is called before the first frame update
     void Start()
@@ -16,9 +18,19 @@ public class Sword : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if(timer<=0)
+        if(!special)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canMove = true;
+            if (timer <= 0)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canMove = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canAttack = true;
+                Destroy(gameObject);
+            }
+        }
+        specialTimer -= Time.deltaTime;
+        if(specialTimer<=0)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canAttack = true;
             Destroy(gameObject);
         }
     }

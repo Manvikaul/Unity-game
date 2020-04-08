@@ -13,11 +13,13 @@ public class actor : MonoBehaviour
     public GameObject sword;
     public float thrustPower;
     public bool canMove;
+    public bool canAttack;
 
     // Start is called before the first frame update
     void Start()
     {
         canMove = true;
+        canAttack = true;
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         getHealth();
@@ -50,8 +52,18 @@ public class actor : MonoBehaviour
 
     void Attack()
     {
+        if (!canAttack)
+            return;
         canMove = false;
+        canAttack = false;
         GameObject newSword = Instantiate(sword, transform.position, sword.transform.rotation);
+
+        if(currentHealth==maxHealth)
+        {
+            newSword.GetComponent<Sword>().special=true;
+            canMove = true;
+            thrustPower = 500;
+        }
 
         #region //Sword Direction
         int swordDir = anim.GetInteger("dir");
