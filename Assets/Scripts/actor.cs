@@ -67,6 +67,7 @@ public class actor : MonoBehaviour
 
         #region //Sword Direction
         int swordDir = anim.GetInteger("dir");
+        anim.SetInteger("attackDir", swordDir);
         if(swordDir==0)
         {  
             newSword.transform.Rotate(0, 0, 0);
