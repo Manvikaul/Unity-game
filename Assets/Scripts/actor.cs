@@ -9,7 +9,7 @@ public class actor : MonoBehaviour
     Animator anim;
     public Image[] heart;
     public int maxHealth;
-    int currentHealth;
+    public int currentHealth;
     public GameObject sword;
     public float thrustPower;
     public bool canMove;

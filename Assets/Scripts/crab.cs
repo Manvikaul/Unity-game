@@ -73,4 +73,19 @@ public class crab : MonoBehaviour
                 Destroy(col.gameObject);
         }
     }
+
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag=="Player")
+        {
+            health--;
+            col.gameObject.GetComponent<actor>().currentHealth--;
+            if(health<=0)
+            {
+                Instantiate(particleEffect, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+    }
 }
