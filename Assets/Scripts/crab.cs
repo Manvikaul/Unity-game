@@ -18,7 +18,7 @@ public class crab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer.GetComponent<SpriteRenderer>();
+        spriteRenderer=GetComponent<SpriteRenderer>();
         direction = 0;
     }
 
@@ -86,6 +86,10 @@ public class crab : MonoBehaviour
                 Instantiate(particleEffect, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
+        }
+        if(col.gameObject.tag=="Wall")
+        {
+            direction = Random.Range(0, 3);
         }
     }
 }
