@@ -166,18 +166,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.084091485, y: 0.013672113}
+  m_Offset: {x: 0.014239758, y: 0.013672113}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.58, y: 0.39}
+    oldSize: {x: 0.37, y: 0.39}
     newSize: {x: 0.58, y: 0.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.36806595, y: 0.36265576}
+  m_Size: {x: 0.37324005, y: 0.36265576}
   m_EdgeRadius: 0
 --- !u!212 &58147533
 SpriteRenderer:
@@ -254,6 +254,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  particleEffect: {fileID: 4709611503881706253, guid: f844ffce55e05b54695cde7dce21782f,
+    type: 3}
+  speed: 3
+  facingUp: {fileID: 21300010, guid: f4056a84f9a0acd43b4ceb049a62a79f, type: 3}
+  facingDown: {fileID: 21300008, guid: f4056a84f9a0acd43b4ceb049a62a79f, type: 3}
+  facingRight: {fileID: 21300020, guid: f4056a84f9a0acd43b4ceb049a62a79f, type: 3}
+  facingLeft: {fileID: 21300022, guid: f4056a84f9a0acd43b4ceb049a62a79f, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
