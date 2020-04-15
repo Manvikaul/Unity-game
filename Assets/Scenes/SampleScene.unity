@@ -617,6 +617,7 @@ MonoBehaviour:
   thrustPower: 200
   canMove: 0
   canAttack: 0
+  iniframes: 0
 --- !u!95 &1289598942
 Animator:
   serializedVersion: 3
