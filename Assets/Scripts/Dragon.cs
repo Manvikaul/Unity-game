@@ -10,13 +10,17 @@ public class Dragon : MonoBehaviour
     float dirTimer = 0.7f;
     public int health;
     public GameObject deathParticle;
+    bool canAttack;
+    float attackTimer=2f;
+    public float thrustPower;
+    public GameObject projectile;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         dir = Random.Range(0, 4);
-
+        canAttack = false;
     }
 
     // Update is called once per frame
@@ -29,6 +33,44 @@ public class Dragon : MonoBehaviour
             dir = Random.Range(0, 4);
         }
         Movement();
+
+        attackTimer -= Time.deltaTime;
+        if(attackTimer<=0)
+        {
+            attackTimer = 2f;
+            canAttack = true;
+        }
+
+        Attack();
+    }
+
+    void Attack()
+    {
+        if (!canAttack)
+            return;
+
+        canAttack = false;
+        if(dir==0)
+        {
+            GameObject newProjectile=Instantiate(projectile, transform.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.up*thrustPower);
+        }
+        else if (dir == 1)
+        {
+            GameObject newProjectile = Instantiate(projectile, transform.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.right * -thrustPower);
+        }
+        else if (dir == 2)
+        {
+            GameObject newProjectile = Instantiate(projectile, transform.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.up * -thrustPower);
+        }
+        else if (dir == 3)
+        {
+            GameObject newProjectile = Instantiate(projectile, transform.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrustPower);
+        }
+
     }
 
     void Movement()
