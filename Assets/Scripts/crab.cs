@@ -19,7 +19,7 @@ public class crab : MonoBehaviour
     void Start()
     {
         spriteRenderer=GetComponent<SpriteRenderer>();
-        direction = 0;
+        direction = Random.Range(0,4);
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class crab : MonoBehaviour
         if(timer<=0)
         {
             timer = 1.5f;
-            direction = Random.Range(0, 3);
+            direction = Random.Range(0, 4);
         }
         Movement();
     }
@@ -89,7 +89,7 @@ public class crab : MonoBehaviour
         }
         if(col.gameObject.tag=="Wall")
         {
-            direction = Random.Range(0, 3);
+            direction = Random.Range(0, 4);
         }
     }
 }

@@ -150,10 +150,10 @@ TextureImporter:
       name: enemies_0
       rect:
         serializedVersion: 2
-        x: 45
+        x: 57
         y: 1023
-        width: 40
-        height: 41
+        width: 28
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,10 +550,10 @@ TextureImporter:
       name: enemies_20
       rect:
         serializedVersion: 2
-        x: 378
-        y: 824
-        width: 50
-        height: 40
+        x: 387
+        y: 826
+        width: 40
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -571,9 +571,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 440
-        y: 824
-        width: 41
-        height: 43
+        y: 826
+        width: 38
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -591,9 +591,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 388
-        y: 763
-        width: 40
-        height: 49
+        y: 771
+        width: 39
+        height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,9 +611,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 440
-        y: 763
-        width: 39
-        height: 49
+        y: 774
+        width: 42
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
