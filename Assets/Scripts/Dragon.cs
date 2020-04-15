@@ -8,6 +8,8 @@ public class Dragon : MonoBehaviour
     public float speed;
     int dir;
     float dirTimer = 0.7f;
+    public int health;
+    public GameObject deathParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -52,4 +54,44 @@ public class Dragon : MonoBehaviour
             anim.SetInteger("dir", dir);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag=="Sword")
+        {
+            health--;
+            col.gameObject.GetComponent<Sword>().CreateParticle();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canAttack = true;
+            Destroy(col.gameObject);
+            if(health<=0)
+            {
+                Instantiate(deathParticle, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            health--;
+            if (!col.gameObject.GetComponent<actor>().iniframes)
+            {
+                col.gameObject.GetComponent<actor>().currentHealth--;
+                col.gameObject.GetComponent<actor>().iniframes = true;
+            }
+            col.gameObject.GetComponent<actor>().currentHealth--;
+            if (health <= 0)
+            {
+                Instantiate(deathParticle, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+        if (col.gameObject.tag == "Wall")
+        {
+            dir = Random.Range(0, 4);
+        }
+    }
 }
+
