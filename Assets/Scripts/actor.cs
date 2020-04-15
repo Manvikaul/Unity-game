@@ -14,6 +14,9 @@ public class actor : MonoBehaviour
     public float thrustPower;
     public bool canMove;
     public bool canAttack;
+    public bool iniframes;
+    SpriteRenderer sr;
+    float iniTimer = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,8 @@ public class actor : MonoBehaviour
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         getHealth();
+        iniframes = false;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void getHealth()

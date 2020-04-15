@@ -80,6 +80,11 @@ public class crab : MonoBehaviour
         if(col.gameObject.tag=="Player")
         {
             health--;
+            if(!col.gameObject.GetComponent<actor>().iniframes)
+            {
+                col.gameObject.GetComponent<actor>().currentHealth--;
+                col.gameObject.GetComponent<actor>().iniframes = true;
+            }
             col.gameObject.GetComponent<actor>().currentHealth--;
             if(health<=0)
             {
