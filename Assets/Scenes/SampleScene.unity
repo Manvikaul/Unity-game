@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 1083524418}
   - component: {fileID: 1083524417}
   - component: {fileID: 1083524416}
+  - component: {fileID: 1083524421}
   m_Layer: 0
   m_Name: BlueDragon
   m_TagString: Untagged
@@ -391,7 +392,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.42, y: 0.41}
+    oldSize: {x: 0.39, y: 0.44}
     newSize: {x: 0.39, y: 0.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -483,6 +484,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083524421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083524415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ded91992a1a73c4fb0f0fce640bd765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1260329909
 GameObject:
   m_ObjectHideFlags: 0
