@@ -52,6 +52,19 @@ public class actor : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        if(iniframes==true)
+        {
+            iniTimer -= Time.deltaTime;
+            int rn = Random.Range(0,100);
+            if (rn < 50) sr.enabled = false;
+            if (rn > 50) sr.enabled = true;
+            if(iniTimer<=0)
+            {
+                iniTimer = 1f;
+                iniframes = false;
+                sr.enabled = true;
+            }
+        }
         getHealth();
     }
 
