@@ -129,4 +129,14 @@ public class actor : MonoBehaviour
         else
         { anim.speed = 0; }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag=="EnemyBullet")
+        {
+            currentHealth--;
+            col.gameObject.GetComponent<Bullet>().CreateParticle();
+            Destroy(col.gameObject);
+        }
+    }
 }
