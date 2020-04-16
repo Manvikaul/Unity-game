@@ -104,6 +104,7 @@ public class Dragon : MonoBehaviour
             health--;
             col.gameObject.GetComponent<Sword>().CreateParticle();
             GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canAttack = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().canMove = true;
             Destroy(col.gameObject);
             if(health<=0)
             {

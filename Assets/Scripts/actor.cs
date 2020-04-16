@@ -134,7 +134,11 @@ public class actor : MonoBehaviour
     {
         if(col.gameObject.tag=="EnemyBullet")
         {
-            currentHealth--;
+            if(!iniframes)
+            {
+                iniframes = true;
+                currentHealth--;
+            }
             col.gameObject.GetComponent<Bullet>().CreateParticle();
             Destroy(col.gameObject);
         }
