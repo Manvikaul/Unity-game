@@ -133,7 +133,9 @@ public class Dragon : MonoBehaviour
         }
         if (col.gameObject.tag == "Wall")
         {
-            dir = Random.Range(0, 4);
+            dir--;
+            if (dir <= 0)
+                dir = 3;
         }
     }
 }
