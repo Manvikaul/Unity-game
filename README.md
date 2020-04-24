@@ -1,1 +1,1 @@
-# A 2D game bult in unity
+# A 2D game built in unity
