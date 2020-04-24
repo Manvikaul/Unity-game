@@ -74,6 +74,7 @@ public class actor : MonoBehaviour
             return;
         canMove = false;
         canAttack = false;
+        thrustPower = 250;
         GameObject newSword = Instantiate(sword, transform.position, sword.transform.rotation);
 
         if(currentHealth==maxHealth)
@@ -145,9 +146,12 @@ public class actor : MonoBehaviour
 
         if(col.gameObject.tag=="Potion")
         {
-            maxHealth++;
             currentHealth = maxHealth;
             Destroy(col.gameObject);
+            if (maxHealth >= 5)
+                return;
+            maxHealth++;
+            
         }
     }
 

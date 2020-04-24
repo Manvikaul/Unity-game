@@ -94,7 +94,9 @@ public class crab : MonoBehaviour
         }
         if(col.gameObject.tag=="Wall")
         {
-            direction = Random.Range(0, 4);
+            direction--;
+            if (direction <= 0)
+                direction = 3;
         }
     }
 }
