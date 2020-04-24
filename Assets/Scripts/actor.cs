@@ -151,6 +151,7 @@ public class actor : MonoBehaviour
             if (maxHealth >= 5)
                 return;
             maxHealth++;
+            currentHealth = maxHealth;
             
         }
     }
