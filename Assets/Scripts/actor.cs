@@ -17,6 +17,7 @@ public class actor : MonoBehaviour
     public bool iniframes;
     SpriteRenderer sr;
     float iniTimer = 1f;
+    public Camera cam;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class actor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cam.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z -5);
         Movement();
         if (Input.GetKeyDown(KeyCode.Space))
             Attack();
@@ -151,7 +153,7 @@ public class actor : MonoBehaviour
             if (maxHealth >= 5)
                 return;
             maxHealth++;
-            currentHealth = maxHealth;
+            currentHealth = maxHealth; 
             
         }
     }
