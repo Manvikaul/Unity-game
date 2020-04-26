@@ -7,7 +7,7 @@ public class Wizard : MonoBehaviour
     Animator anim;
     public float speed;
     public int dir;
-    float dirTimer = 0.7f;
+    float dirTimer = 1.2f;
     public int health;
     public GameObject deathParticle;
     bool canAttack;
@@ -31,8 +31,23 @@ public class Wizard : MonoBehaviour
         dirTimer -= Time.deltaTime;
         if (dirTimer <= 0)
         {
-            dirTimer = 0.7f;
-            dir = Random.Range(0, 4);
+            dirTimer = 1.2f;
+            switch (dir)
+            {
+                case 1: dir = 0;
+                    break;
+                case 2:dir = 1;
+                    break;
+                case 3:dir = 2;
+                    break;
+                case 0: dir = 3;
+                    break;
+                default: dir = 1;
+                    break;
+
+            }
+
+
         }
         Movement();
 
