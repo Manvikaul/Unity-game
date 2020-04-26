@@ -10314,7 +10314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d13a9b902e2dba4fbfe9fa43a8283d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
+  sceneIndex: 1
 --- !u!1001 &1748576315
 PrefabInstance:
   m_ObjectHideFlags: 0
