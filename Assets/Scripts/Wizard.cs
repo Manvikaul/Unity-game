@@ -16,6 +16,7 @@ public class Wizard : MonoBehaviour
     public GameObject projectile;
     float changeTimer = 0.2f;
     bool shouldChange;
+    float specialTimer=0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,14 @@ public class Wizard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        specialTimer -= Time.deltaTime;
+        if (specialTimer <= 0)
+        {
+            SpecialAttack();
+            SpecialAttack();
+            specialTimer = 0.5f;
+        }
+
         dirTimer -= Time.deltaTime;
         if (dirTimer <= 0)
         {
@@ -46,7 +55,6 @@ public class Wizard : MonoBehaviour
                     break;
 
             }
-
 
         }
         Movement();
@@ -174,6 +182,28 @@ public class Wizard : MonoBehaviour
 
             shouldChange = true;
 
+        }
+    }
+
+    void SpecialAttack()
+    {
+        GameObject newProjectile= Instantiate(projectile, transform.position, transform.rotation);
+        int randomDir = Random.Range(0, 4);
+
+        switch(randomDir)
+        {
+            case 0:
+                newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrustPower);
+                break;
+            case 1: 
+                newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.up * thrustPower);
+                break;
+            case 2: 
+                newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.right * -thrustPower);
+                break;
+            case 3:
+                newProjectile.GetComponent<Rigidbody2D>().AddForce(Vector2.up * -thrustPower);
+                break;
         }
     }
 }
