@@ -11,6 +11,7 @@ public class LevelLoader : MonoBehaviour
     {
         if(col.gameObject.tag=="Player")
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<actor>().SaveGame();
             SceneManager.LoadScene(sceneIndex);
         }
     }

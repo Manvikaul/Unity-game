@@ -156,4 +156,16 @@ public class actor : MonoBehaviour
         }
     }
 
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("maxHealth", maxHealth);
+        PlayerPrefs.SetInt("currentHealth", currentHealth);
+    }
+
+    void LoadGame()
+    {
+        maxHealth = PlayerPrefs.GetInt("maxHealth");
+        currentHealth = PlayerPrefs.GetInt("currentHealth");
+    }
+
 }
