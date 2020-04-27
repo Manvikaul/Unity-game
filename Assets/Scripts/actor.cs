@@ -22,6 +22,7 @@ public class actor : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+
         if (PlayerPrefs.HasKey("maxHealth"))
         {
             LoadGame();

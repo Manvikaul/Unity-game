@@ -13035,6 +13035,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7678632481228812456, guid: 39929e6dc46c8944e97dedf860070aba,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7678632481228812458, guid: 39929e6dc46c8944e97dedf860070aba,
         type: 3}
       propertyPath: heart.Array.size
