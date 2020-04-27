@@ -21,11 +21,16 @@ public class actor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canMove = true;
-        canAttack = true;
         anim = GetComponent<Animator>();
+        if (PlayerPrefs.HasKey("maxHealth"))
+        {
+            LoadGame();
+        }
+        else
         currentHealth = maxHealth;
         getHealth();
+        canMove = true;
+        canAttack = true;
         iniframes = false;
         sr = GetComponent<SpriteRenderer>();
     }
