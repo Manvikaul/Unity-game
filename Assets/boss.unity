@@ -1570,6 +1570,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6187930267462998038, guid: 197d13f265c0dea4dab62c25e580fff5,
         type: 3}
+    - target: {fileID: 4099632009665890848, guid: 18232b3635e4ae94fb6c8f4eddb15808,
+        type: 3}
+      propertyPath: rewardPosition
+      value: 
+      objectReference: {fileID: 870869388}
+    - target: {fileID: 4099632009665890848, guid: 18232b3635e4ae94fb6c8f4eddb15808,
+        type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 5084774888389461162, guid: 9787abea292d7fa40907fa8780116b3d,
+        type: 3}
     - target: {fileID: 4099632009665890908, guid: 18232b3635e4ae94fb6c8f4eddb15808,
         type: 3}
       propertyPath: m_Name

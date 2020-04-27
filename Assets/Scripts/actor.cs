@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class actor : MonoBehaviour
 {
@@ -23,15 +24,21 @@ public class actor : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        if (PlayerPrefs.HasKey("maxHealth"))
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            LoadGame();
+            PlayerPrefs.DeleteAll();
         }
-        else
+
+        // Sets player prefs
+        if (!PlayerPrefs.HasKey("maxHealth"))
         {
+            maxHealth = 2;
             currentHealth = maxHealth;
+            SaveGame();
         }
-        
+        // Loads the stats
+        LoadGame();
+
         getHealth();
         canMove = true;
         canAttack = true;
@@ -144,6 +151,10 @@ public class actor : MonoBehaviour
     {
         if(col.gameObject.tag=="EnemyBullet")
         {
+            if(currentHealth<=0)
+            {
+                SceneManager.LoadScene(0);
+            }
             if(!iniframes)
             {
                 iniframes = true;

@@ -156,7 +156,7 @@ public class Wizard : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            health--;
+ 
             if (!col.gameObject.GetComponent<actor>().iniframes)
             {
                 col.gameObject.GetComponent<actor>().currentHealth--;
@@ -166,6 +166,7 @@ public class Wizard : MonoBehaviour
             if (health <= 0)
             {
                 Instantiate(deathParticle, transform.position, transform.rotation);
+                Instantiate(potion, rewardPosition.position, potion.transform.rotation);
                 Destroy(gameObject);
             }
         }
