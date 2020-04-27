@@ -27,7 +27,10 @@ public class actor : MonoBehaviour
             LoadGame();
         }
         else
-        currentHealth = maxHealth;
+        {
+            currentHealth = maxHealth;
+        }
+        
         getHealth();
         canMove = true;
         canAttack = true;

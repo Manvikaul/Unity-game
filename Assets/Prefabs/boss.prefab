@@ -115,7 +115,8 @@ MonoBehaviour:
   speed: 2
   dir: 1
   health: 5
-  deathParticle: {fileID: 0}
+  deathParticle: {fileID: 6187930267462998038, guid: 197d13f265c0dea4dab62c25e580fff5,
+    type: 3}
   thrustPower: 350
   projectile: {fileID: 2499598903805989931, guid: b5a8e755e2839f3438907eb8dadd7121,
     type: 3}
